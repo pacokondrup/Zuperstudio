@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+
+/*global*/
+:root {
+    --textFade: 2s;
+    --warmGrey: #0E0C0C;
+    --lightGrey: #A5A5A5;
+    --zupLBlue: #EDF1F6;
+    --zupRed: #FF5B5B;
+    --wallDarkP: url("images/bg/wallDarkP.png");
+    --wallColor: url("images/bg/wallColor.png");
+    --wallBlur: url("images/bg/wallDarkP_Blur.png")
+    /*call the variable using var(--color) in place of the color code */
+}
+
+html {
+    overflow-y:scroll;
+    font-family: Poppins;
+    padding-top: 46vh;
+    text-align: center;
+    scroll-behavior: smooth;
+}
+
+/*Zuperstudio logo header*/
+.logo {
+    width: 330px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*main menu*/
+.menu {
+    font-size: 12px;
+    color: var(--lightGrey);
+    font-weight: 400;
+    position:relative;
+    z-index:auto;
+    padding-bottom: 10vh;
+    animation: fadeIn var(--textFade);
+}
+
+.arrow {
+    width: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 35vh;
+}
+
+.body {
+    background-color: var(--warmGrey);
+    background-image: var(--wallDarkP);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+/*links at bottom menu*/
+.bottom-menu {
+    font-size: 12px;
+    color: var(--lightGrey);
+    padding: 35px;
+    font-weight: 400;
+    position:relative;
+    z-index: auto;
+    animation: fadeIn var(--textFade);
+}
+
+/*to destroy any list bulletpoints*/
+li {
+    list-style: none;
+}
+
+/*COLUMN1*/
+.first-column {
+    overflow: hidden;
+    position: relative;
+}
+
+a { color: inherit; 
+    text-decoration: none; 
+    transition: color 0.4s;
+}
+
+a:hover {
+    color: var(--zupRed);
+}
+
+.zoom {
+    transition: transform 1.0s;
+    margin-bottom: 5vh;
+}
+
+.zoom:hover {
+    transform: scale(1.01); /* Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1;
+    max-width: 60%;
+    margin:auto;
+    padding: 50px;
+}
+
+.column img {
+    vertical-align: center;
+    width: 100%;
+}
+
+
+
+
+
+/*AVATAR FADE EFFECT START*/
+.image-stack::after {
+  content: ' ';
+  display: table;
+  clear: both;
+}
+
+.image-stack__item--top {
+    float: left;
+    width: 100%;
+    margin-right: -100%;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+}
+
+.image-stack__item--top:hover {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+}
+
+.image-stack__item--bottom {
+    float: right;
+    width: 100%;
+}
+/*END AVATAR FADE EFFECT*/
+
+
+
+
+
+/*BG TRANSITION START*/
+.container {
+  max-width: 800px;
+}
+
+.container a {
+  position: relative;
+}
+
+.bg {
+    position: fixed; /*change to absolute makes the bottom link work again ....*/
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    transition: all 1.0s ease-out;
+}
+
+.bg-show .bg {
+    z-index: 1;
+    opacity: 1;
+}
+
+.bg-show a:hover {
+    z-index: 2;
+}
+
+.bg-show .container a:hover::before {
+    transition: transform 1.0s 1.0 ease-out;
+}
+/*BG TRANSITION END*/
+
+
+
+
+/*ABOUT PAGE*/
+.about-menu {
+    font-size: 14px;
+    color: var(--lightGrey);
+    font-weight: 400;
+    text-align: left;
+    animation: fadeIn var(--textFade);
+    position:relative;
+    z-index:auto;
+    padding-top: 2vh;
+    width: 37%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.about-body {
+    background-color: var(--warmGrey);
+    background-image: var(--wallDarkP);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+/*links at bottom menu*/
+.about-bottom-menu {
+    font-size: 12px;
+    color: var(--lightGrey);
+    padding: 30px;
+    padding-top: 20vh;
+    font-weight: 400;
+    position:relative;
+    z-index: auto;
+    animation: fadeIn var(--textFade);
+}
+
+.bold {
+    font-weight: 500;
+    color: white;
+    display: inline;
+}
+
+.hl {
+    font-weight: 400;
+    color: var(--lightGrey);
+    display: inline;
+    transition: color 0.4s;
+}
+
+.hl:hover {
+    color: var(--zupRed);
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
