@@ -2,15 +2,25 @@
 
 /*global*/
 :root {
-    --textFade: 2s;
+    --textFade: 1s;
+    --bgFade: 2s;
     --warmGrey: #0E0C0C;
     --lightGrey: #A5A5A5;
     --zupLBlue: #EDF1F6;
+    --zupMBlue: #7294DE;
+    --zupDBlue: #3A589A;
     --zupRed: #FF5B5B;
-    --wallDarkP: url("images/bg/wallDarkP.png");
+    --wallDarkP: url("images/bg/wallDarkP-Light-zup-blue.png");
     --wallColor: url("images/bg/wallColor.png");
     --wallBlur: url("images/bg/wallDarkP_Blur.png")
     /*call the variable using var(--color) in place of the color code */
+}
+
+@font-face {
+    font-family: 'ZuperScript';
+    src: url("images/font/zuperscript-regular.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 html {
@@ -21,18 +31,34 @@ html {
     scroll-behavior: smooth;
 }
 
-/*Zuperstudio logo header*/
+/*Zuperstudio logo header OLD
 .logo {
     width: 330px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+}*/
+
+.logo {
+    font-family: 'Zuperscript';
+    font-size: 72px;
+    text-align: center;
+    color: var(--zupDBlue);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+a.neon:hover {
+    color: white;
+    transition: var(--bgFade);
+}
+
 
 /*main menu*/
 .menu {
-    font-size: 12px;
-    color: var(--lightGrey);
+    font-size: 14px;
+    color: var(--zupDBlue);
     font-weight: 400;
     position:relative;
     z-index:auto;
@@ -49,7 +75,6 @@ html {
 }
 
 .body {
-    background-color: var(--warmGrey);
     background-image: var(--wallDarkP);
     background-attachment: fixed;
     background-size: cover;
@@ -60,8 +85,8 @@ html {
 
 /*links at bottom menu*/
 .bottom-menu {
-    font-size: 12px;
-    color: var(--lightGrey);
+    font-size: 14px;
+    color: var(--zupDBlue);
     padding: 35px;
     font-weight: 400;
     position:relative;
@@ -114,6 +139,46 @@ a:hover {
     vertical-align: center;
     width: 100%;
 }
+
+
+
+
+
+
+
+/*LOGO FADE EFFECT START*/
+.logo-stack::after {
+  content: ' ';
+  display: table;
+  clear: both;
+}
+
+.logo-stack__item--top {
+    float: left;
+    width: 100%;
+    margin-right: -100%;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+}
+
+.logo-stack__item--top:hover {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+}
+
+.logo-stack__item--bottom {
+    float: right;
+    width: 100%;
+}
+/*LOGO FADE EFFECT END*/
+
+
 
 
 
@@ -197,7 +262,7 @@ a:hover {
 /*ABOUT PAGE*/
 .about-menu {
     font-size: 14px;
-    color: var(--lightGrey);
+    color: var(--zupDBlue);
     font-weight: 400;
     text-align: left;
     animation: fadeIn var(--textFade);
@@ -210,7 +275,7 @@ a:hover {
 }
 
 .about-body {
-    background-color: var(--warmGrey);
+    /*background-color: var(--warmGrey);*/
     background-image: var(--wallDarkP);
     background-attachment: fixed;
     background-size: cover;
@@ -221,8 +286,8 @@ a:hover {
 
 /*links at bottom menu*/
 .about-bottom-menu {
-    font-size: 12px;
-    color: var(--lightGrey);
+    font-size: 14px;
+    color: var(--zupDBlue);
     padding: 30px;
     padding-top: 20vh;
     font-weight: 400;
@@ -233,13 +298,13 @@ a:hover {
 
 .bold {
     font-weight: 500;
-    color: white;
+    color: var(--zupMBlue);
     display: inline;
 }
 
 .hl {
     font-weight: 400;
-    color: var(--lightGrey);
+    color: var(--zupDBlue);
     display: inline;
     transition: color 0.4s;
 }

@@ -5,7 +5,6 @@
 
 <html>
     <link rel="stylesheet" type="text/css" href="zuperstudio.css">
-     <div class="html">
         <head>
             <!--Browser Tab, Websearch Title-->
             <title>
@@ -18,15 +17,15 @@
             <div class="bg"></div>
             <div class="logo container">
                 <!--hover element-->
-                <!--to hyperlink logo, just add href="index.html" inside anchor tag-->
-                <a data-bg="images/bg/wallColor.png" ><img src="images/logo/logo.svg"></a> 
+                <!--to hyperlink logo, just add href="/" inside anchor tag-->
+                <a data-bg="images/bg/wallColor.png" class="neon">Zuperstudio</a> 
             </div>
 
             <div class="menu">
-                <a href="about.html">About the studio</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="about">About the studio</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="mailto:zuper.hello@gmail.com?subject=Zuper Hello!">Contact the studio</a>
                 <div class="arrow">
-                    <a href="#torso"> <img src="images/logo/arrow_dot.svg"></a>
+                    <a href="#torso"> <img src="images/logo/arrow_dot_zupDBlue.svg"></a>
                 </div>
             </div>
         </header>
@@ -34,37 +33,60 @@
         <body class="body">
             <div class="row" id="torso">
                 <ul class="column image-stack">
+                <!--project avatars-->
                     <li class= "zoom">
-                        <!--project avatars-->
+                        <!--zuplankta-->
                         <div class="image-stack__item image-stack__item--top">
-                            <a href="https://www.zuplankta.com/index.html" target="new">
+                            <a href="https://www.zuplankta.com/" target="new">
                             <img src="images/avatars/avatar_zuplankta.png"></a>
                         </div>
                         <div class="image-stack__item image-     stack__item--bottom">
-                            <img src="images/avatars/avatar_zuplankta_bw.png">
+                            <img src="images/avatars/avatar_zuplankta_mono.png">
                         </div>
                     </li>
                     <li class= "zoom">
-                        <!--project avatars-->
+                        <!--geoplankta-->
                         <div class="image-stack__item image-stack__item--top">
-                            <a href="http://zuplankta.com/geo-index.html" target="new">
+                            <a href="http://zuplankta.com/geo-/" target="new">
                             <img src="images/avatars/avatar_geoplankta.png"></a>
                         </div>
                         <div class="image-stack__item image-     stack__item--bottom">
-                            <img src="images/avatars/avatar_geoplankta_bw.png">
+                            <img src="images/avatars/avatar_geoplankta_mono.png">
                         </div>
                     </li>
-                    
+                    <li class= "zoom">
+                        <!--zuperblog-->
+                        <div class="image-stack__item image-stack__item--top">
+                            <a href="https://zuperhello.wixsite.com/blog" target="new">
+                            <img src="images/avatars/avatar_zuperblog.png"></a>
+                        </div>
+                        <div class="image-stack__item image-     stack__item--bottom">
+                            <img src="images/avatars/avatar_zuperblog_mono.png">
+                        </div>
+                    </li>
                     
                     
                 </ul>
             </div>
             <script src="zuperstudio.js"></script>
+            <script>
+              const homeLink = document.querySelector('.bottom-menu a[href="#"]');
+              homeLink.addEventListener('click', e => {
+                e.preventDefault();
+
+                // Clear any existing hash scroll
+                window.location.hash = '';
+
+                // Wait a fraction of a second so the browser finishes any smooth-scroll
+                setTimeout(() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 150); // 150ms delay — adjust if needed
+              });
+</script>
+
             <div class="bottom-menu">
-                <a href="#top">Home</a><br><br>&copy; Z&#252;perstudio <script>document.write(new Date().getFullYear())</script>
+                 <a href="#">Home</a><br><br>&copy; Z&#252;perstudio <script>document.write(new Date().getFullYear())</script>
             </div>
 
-
         </body>
-    </div>
 </html>
