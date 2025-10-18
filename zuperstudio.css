@@ -23,10 +23,15 @@
     font-style: normal;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 html {
     overflow-y:scroll;
     font-family: Poppins;
-    padding-top: 46vh;
     text-align: center;
     scroll-behavior: smooth;
 }
@@ -40,6 +45,7 @@ html {
 }*/
 
 .logo {
+    padding-top:46vh;
     font-family: 'Zuperscript';
     font-size: 72px;
     text-align: center;
@@ -48,6 +54,56 @@ html {
     margin-left: auto;
     margin-right: auto;
 }
+
+.project-logo {
+    font-family: 'Zuperscript';
+    font-size: 48px;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;         /* make sure it stays above content */
+}
+
+.project-cover-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* wrapper for project-title and project-text to set same margins */
+.project-info {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.project-title {
+    font-size: 16px;
+    color: var(--zupDBlue);
+    font-weight: 600;
+    text-align: left;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.project-text {
+    font-size: 14px;
+    color: var(--zupDBlue);
+    font-weight: 400;
+    text-align: left;
+    animation: fadeIn var(--textFade);
+    position:relative;
+    z-index:auto;
+}
+
+
+
+
 
 a.neon:hover {
     color: white;
@@ -126,6 +182,7 @@ a:hover {
 .row {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .column {
@@ -176,6 +233,11 @@ a:hover {
     float: right;
     width: 100%;
 }
+
+body.disable-hover .container a:hover {
+  pointer-events: none; /* temporarily disables hover effects */
+}
+
 /*LOGO FADE EFFECT END*/
 
 
