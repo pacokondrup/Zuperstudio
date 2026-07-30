@@ -359,8 +359,8 @@ body.disable-hover .container a:hover {
 }
 
 .bold {
-    font-weight: 500;
-    color: var(--zupMBlue);
+    font-weight: 600;
+    color: var(--zupDBlue);
     display: inline;
 }
 
@@ -371,7 +371,20 @@ body.disable-hover .container a:hover {
     transition: color 0.4s;
 }
 
+.hl-ital {
+    font-weight: 400;
+    color: var(--zupDBlue);
+    font-style: italic;
+    display: inline;
+    transition: color 0.4s;
+}
+
 .hl:hover {
+    color: var(--zupRed);
+}
+
+
+.hl-ital:hover {
     color: var(--zupRed);
 }
 
